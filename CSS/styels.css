@@ -1,0 +1,60 @@
+body{
+    background-color: #f7ecde;
+}
+header{
+    h1{
+        font-family: "Pacifico", cursive;
+        position: relative;
+        width: 250px;
+        margin: auto;
+        font-size: 50px;
+    }
+    h1::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 40%;
+        left: 45%;
+        bottom: -20%;
+        transform: translate(-50%,-50%);
+        background-color: #fec260;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    h1:hover::before {
+        height: 60%;
+    }
+}
+.dotted-background-line {
+    width: 100%;
+    height: 10px;
+    background-image: radial-gradient(circle, #333 1px, transparent 1px);
+    background-size: 3px 5px;
+    background-repeat: repeat-x;
+  }
+.content{
+    .title{
+        font-family: "Righteous", cursive;  
+        background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        font-weight: 400;
+    }
+    .inputs{
+        font-weight: 700
+    }
+    .btn-submit{
+        color: white;
+        background-color: #d1512d;
+        border: 1px solid #d1512d ;
+        width: 150px;
+    }
+    .btn-submit:hover{
+        background-color: #a03315;   
+    }
+    .form-control:focus{
+        border-color:#d1512d;
+        box-shadow: #d1512d;
+    }
+}
+  

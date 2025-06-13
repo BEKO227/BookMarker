@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/styels.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="CSS/bookmark.jpg" type="image/x-icon">
+    <title>BookMark</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="my-5">Bookmarker</h1>
+        </header>
+        <div class="dotted-background-line"></div>
+        <div class="container content py-4">
+            <div class="title text-center">
+                <i class="fa-solid fa-bookmark fs-4"></i>
+                <span class="py-3 fs-4 mx-2">Bookmark your favorite sites</span>
+                <i class="fa-solid fa-bookmark fs-4"></i>
+            </div>
+            <div class="inputs my-3">
+              <div class="bookmarkinput my-3 py-2">
+                <label for="bookMarkName"> 
+                    <i class="fa-solid fa-book pe-2 ps-2"></i>
+                    <span class="label">Site Name</span>
+                </label>
+                <input id="bookMarkName" type="text" class="form-control my-2" placeholder="Bookmark Name">
+              </div>
+              <div class="siteLinkInput my-3 py-2">
+                <label for="SiteNameInput"> 
+                    <i class="fa-solid fa-link pe-2 ps-2"></i>
+                    Site URL
+                </label>
+                <input id="SiteNameInput" type="text" class="form-control my-2" placeholder="Bookmark Name">
+              </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" onclick="addbookmark()" class="btn btn-submit mx-auto">submit</button>
+              </div>
+            </div>
+            <div class="dotted-background-line my-3"></div>
+            <div class="table">
+                <table class="table mt-4 text-center bg-light">
+                    <thead>
+                        <tr>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">Website Name</th>
+                        <th class="text-capitalize">Visit</th>
+                        <th class="text-capitalize">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableContent"></tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html> 
