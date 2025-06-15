@@ -18,10 +18,13 @@ if(!correctUrl.test(url)){
 }
 
 const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
-const bookmark={
+const faviconUrl = `https://www.google.com/s2/favicons?sz=64&domain_url=${formattedUrl}`;
+const bookmark = {
     name,
-    url:formattedUrl
+    url: formattedUrl,
+    favicon: faviconUrl
 };
+
 bookmarks.push(bookmark);
 localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 displayBookmarks()
@@ -35,11 +38,14 @@ function displayBookmarks() {
     for(let i=0;i<bookmarks.length;i++){
         const bookmark = bookmarks[i]; // Get the bookmark object
         const table=`
-        <tr>
-      <td>${i + 1}</td>
-      <td>${bookmark.name}</td>
-      <td><a href="${bookmark.url}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Visit</a></td>
-      <td><button onclick="deleteBookmark(${i})" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button></td>
+    <tr>
+    <td>${i + 1}</td>
+    <td class="d-flex align-items-center gap-2 justify-content-center">
+        <img src="${bookmark.favicon}" width="20" height="20" alt="favicon" />
+        ${bookmark.name}
+    </td>
+    <td><a href="${bookmark.url}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-eye"></i> Visit</a></td>
+    <td><button onclick="deleteBookmark(${i})" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button></td>
     </tr>
     ` ;
         tableContent.innerHTML += table;
